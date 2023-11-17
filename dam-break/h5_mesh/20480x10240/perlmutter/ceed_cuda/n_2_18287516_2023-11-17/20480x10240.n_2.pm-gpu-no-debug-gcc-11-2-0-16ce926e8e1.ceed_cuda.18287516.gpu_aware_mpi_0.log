@@ -1,0 +1,184 @@
+MPIIO WARNING: DVS stripe width of 24 was requested but DVS set it to 1
+See MPICH_MPIIO_DVS_MAXNODES in the intro_mpi man page.
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 0:
+  #000: ../../src/H5Dio.c line 179 in H5Dread(): can't read data
+    major: Dataset
+    minor: Read failed
+  #001: ../../src/H5VLcallback.c line 2011 in H5VL_dataset_read(): dataset read failed
+    major: Virtual Object Layer
+    minor: Read failed
+  #002: ../../src/H5VLcallback.c line 1978 in H5VL__dataset_read(): dataset read failed
+    major: Virtual Object Layer
+    minor: Read failed
+  #003: ../../src/H5VLnative_dataset.c line 166 in H5VL__native_dataset_read(): can't read data
+    major: Dataset
+    minor: Read failed
+  #004: ../../src/H5Dio.c line 545 in H5D__read(): can't read data
+    major: Dataset
+    minor: Read failed
+  #005: ../../src/H5Dcontig.c line 600 in H5D__contig_read(): contiguous read failed
+    major: Dataset
+    minor: Read failed
+  #006: ../../src/H5Dselect.c line 465 in H5D__select_read(): read error
+    major: Dataspace
+    minor: Read failed
+  #007: ../../src/H5Dselect.c line 220 in H5D__select_io(): read error
+HDF5-DIAG: Error detected in HDF5 (1.12.2) MPI-process 1:
+  #000: ../../src/H5Dio.c line 179 in H5Dread(): can't read data
+    major: Dataset
+    minor: Read failed
+  #001: ../../src/H5VLcallback.c line 2011 in H5VL_dataset_read(): dataset read failed
+    major: Virtual Object Layer
+    minor: Read failed
+  #002: ../../src/H5VLcallback.c line 1978 in H5VL__dataset_read(): dataset read failed
+    major: Virtual Object Layer
+    minor: Read failed
+  #003: ../../src/H5VLnative_dataset.c line 166 in H5VL__native_dataset_read(): can't read data
+    major: Dataset
+    minor: Read failed
+  #004: ../../src/H5Dio.c line 545 in H5D__read(): can't read data
+    major: Dataset
+    minor: Read failed
+  #005: ../../src/H5Dcontig.c line 600 in H5D__contig_read(): contiguous read failed
+    major: Dataset
+    minor: Read failed
+  #006: ../../src/H5Dselect.c line 465 in H5D__select_read(): read error
+    major: Dataspace
+    minor: Read failed
+  #007: ../../src/H5Dselect.c line 220 in H5D__select_io(): read error
+    major: Dataspace
+    minor: Read failed
+  #008: ../../src/H5Dcontig.c line 938 in H5D__contig_readvv(): can't perform vectorized read
+    major: Dataset
+    minor: Can't operate on object
+  #009: ../../src/H5VM.c line 1401 in H5VM_opvv(): can't perform operation
+    major: Internal error (too specific to document in detail)
+    minor: Can't operate on object
+  #010: ../../src/H5Dcontig.c line 868 in H5D__contig_readvv_cb(): block write failed
+    major: Dataset
+    minor: Write failed
+  #011: ../../src/H5Fio.c line 105 in H5F_shared_block_read(): read through page buffer failed
+    major: Low-level I/O
+    minor: Read failed
+  #012: ../../src/H5PB.c line 721 in H5PB_read(): read through metadata accumulator failed
+    major: Page Buffering
+    minor: Read failed
+  #013: ../../src/H5Faccum.c line 252 in H5F__accum_read(): driver read request failed
+    major: Low-level I/O
+    minor: Read failed
+  #014: ../../src/H5FDint.c line 189 in H5FD_read(): driver read request failed
+    major: Virtual File Layer
+    minor: Read failed
+  #015: ../../src/H5FDmpio.c line 1233 in H5FD__mpio_read(): can't convert from size to size_i
+    major: Dataspace
+    minor: Read failed
+  #008: ../../src/H5Dcontig.c line 938 in H5D__contig_readvv(): can't perform vectorized read
+    major: Dataset
+    minor: Can't operate on object
+  #009: ../../src/H5VM.c line 1401 in H5VM_opvv(): can't perform operation
+    major: Internal error (too specific to document in detail)
+    minor: Can't operate on object
+  #010: ../../src/H5Dcontig.c line 868 in H5D__contig_readvv_cb(): block write failed
+    major: Dataset
+    minor: Write failed
+  #011: ../../src/H5Fio.c line 105 in H5F_shared_block_read(): read through page buffer failed
+    major: Low-level I/O
+    minor: Read failed
+  #012: ../../src/H5PB.c line 721 in H5PB_read(): read through metadata accumulator failed
+    major: Page Buffering
+    minor: Read failed
+  #013: ../../src/H5Faccum.c line 252 in H5F__accum_read(): driver read request failed
+    major: Low-level I/O
+    minor: Read failed
+  #014: ../../src/H5FDint.c line 189 in H5FD_read(): driver read request failed
+    major: Virtual File Layer
+    minor: Read failed
+  #015: ../../src/H5FDmpio.c line 1233 in H5FD__mpio_read(): can't convert from size to size_i
+    major: Internal error (too specific to document in detail)
+    minor: Out of range
+    major: Internal error (too specific to document in detail)
+    minor: Out of range
+[1]PETSC ERROR: --------------------- Error Message --------------------------------------------------------------
+[0]PETSC ERROR: --------------------- Error Message --------------------------------------------------------------
+[0]PETSC ERROR: Error in external library
+[0]PETSC ERROR: Error in HDF5 call H5Dread() Status -1
+[0]PETSC ERROR: WARNING! There are unused option(s) set! Could be the program crashed before usage or a spelling mistake, etc!
+[0]PETSC ERROR:   Option left: name:-dist_dm_distribute_save_sf value: true source: code
+[0]PETSC ERROR:   Option left: name:-dm_view (no value) source: command line
+[0]PETSC ERROR:   Option left: name:-ts_monitor (no value) source: command line
+[0]PETSC ERROR: See https://petsc.org/release/faq/ for trouble shooting.
+[0]PETSC ERROR: Petsc Development GIT revision: v3.20.1-181-g16ce926e8e1  GIT Date: 2023-11-10 22:31:50 -0600
+[0]PETSC ERROR: /global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/build-pm-gpu-no-debug-gcc-11-2-0-16ce926e8e1/bin/rdycore on a pm-gpu-no-debug-gcc-11-2-0-16ce926e8e1 named nid008380 by gbisht Fri Nov 17 07:44:01 2023
+[0]PETSC ERROR: Configure options --with-cc=cc --with-cxx=CC --with-fc=ftn --CFLAGS=" -g " --CXXFLAGS=" -g " --CUDAFLAGS=" -g -Xcompiler -rdynamic " --with-fortran-bindings=1 --COPTFLAGS="   -O" --CXXOPTFLAGS=" -O" --FOPTFLAGS="   -O" --with-mpiexec="srun -G4" --with-batch=0 --download-kokkos --download-kokkos-kernels --with-kokkos-kernels-tpl=0 --with-make-np=8 --with-64-bit-indices=0 --with-netcdf-dir=/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1 --with-pnetcdf-dir=/opt/cray/pe/parallel-netcdf/1.12.3.3/gnu/9.1 --with-hdf5-dir=/opt/cray/pe/hdf5-parallel/1.12.2.3/gnu/9.1 --with-cuda-dir=/opt/nvidia/hpc_sdk/Linux_x86_64/21.11/cuda/11.5 --with-cuda-arch=80 --download-parmetis --download-metis --download-zlib --download-scalapack --download-sowing --download-triangle --download-exodusii --download-libceed --download-cgns-commit=HEAD --with-debugging=0 PETSC_ARCH=pm-gpu-no-debug-gcc-11-2-0-16ce926e8e1
+[0]PETSC ERROR: #1 PetscViewerHDF5ReadArray_Private() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/is/utils/hdf5io.c:178
+[0]PETSC ERROR: #2 PetscViewerHDF5Load() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/is/utils/hdf5io.c:243
+[0]PETSC ERROR: #3 VecLoad_HDF5() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/vec/utils/vecio.c:129
+[0]PETSC ERROR: #4 VecLoad_Default() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/vec/utils/vecio.c:212
+[0]PETSC ERROR: #5 VecLoad() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/vec/interface/vector.c:1157
+[1]PETSC ERROR: Error in external library
+[1]PETSC ERROR: Error in HDF5 call H5Dread() Status -1
+[1]PETSC ERROR: WARNING! There are unused option(s) set! Could be the program crashed before usage or a spelling mistake, etc!
+[1]PETSC ERROR:   Option left: name:-dist_dm_distribute_save_sf value: true source: code
+[1]PETSC ERROR:   Option left: name:-dm_view (no value) source: command line
+[1]PETSC ERROR:   Option left: name:-ts_monitor (no value) source: command line
+[1]PETSC ERROR: See https://petsc.org/release/faq/ for trouble shooting.
+[1]PETSC ERROR: Petsc Development GIT revision: v3.20.1-181-g16ce926e8e1  GIT Date: 2023-11-10 22:31:50 -0600
+[1]PETSC ERROR: /global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/build-pm-gpu-no-debug-gcc-11-2-0-16ce926e8e1/bin/rdycore on a pm-gpu-no-debug-gcc-11-2-0-16ce926e8e1 named nid008380 by gbisht Fri Nov 17 07:44:01 2023
+[1]PETSC ERROR: Configure options --with-cc=cc --with-cxx=CC --with-fc=ftn --CFLAGS=" -g " --CXXFLAGS=" -g " --CUDAFLAGS=" -g -Xcompiler -rdynamic " --with-fortran-bindings=1 --COPTFLAGS="   -O" --CXXOPTFLAGS=" -O" --FOPTFLAGS="   -O" --with-mpiexec="srun -G4" --with-batch=0 --download-kokkos --download-kokkos-kernels --with-kokkos-kernels-tpl=0 --with-make-np=8 --with-64-bit-indices=0 --with-netcdf-dir=/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1 --with-pnetcdf-dir=/opt/cray/pe/parallel-netcdf/1.12.3.3/gnu/9.1 --with-hdf5-dir=/opt/cray/pe/hdf5-parallel/1.12.2.3/gnu/9.1 --with-cuda-dir=/opt/nvidia/hpc_sdk/Linux_x86_64/21.11/cuda/11.5 --with-cuda-arch=80 --download-parmetis --download-metis --download-zlib --download-scalapack --download-sowing --download-triangle --download-exodusii --download-libceed --download-cgns-commit=HEAD --with-debugging=0 PETSC_ARCH=pm-gpu-no-debug-gcc-11-2-0-16ce926e8e1
+[1]PETSC ERROR: #1 PetscViewerHDF5ReadArray_Private() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/is/utils/hdf5io.c:178
+[1]PETSC ERROR: #2 PetscViewerHDF5Load() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/is/utils/hdf5io.c:243
+[1]PETSC ERROR: #3 VecLoad_HDF5() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/vec/utils/vecio.c:129
+[1]PETSC ERROR: #4 VecLoad_Default() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/vec/utils/vecio.c:212
+[1]PETSC ERROR: #5 VecLoad() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/vec/vec/interface/vector.c:1157
+[1]PETSC ERROR: #6 DMPlexLoad_HDF5_Xdmf_Internal() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plexhdf5xdmf.c:117
+[1]PETSC ERROR: #7 DMLoad_Plex() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plex.c:2308
+[1]PETSC ERROR: #8 DMLoad() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/interface/dm.c:4138
+[1]PETSC ERROR: #9 DMPlexCreateFromFile() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plexcreate.c:5580
+[0]PETSC ERROR: #6 DMPlexLoad_HDF5_Xdmf_Internal() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plexhdf5xdmf.c:117
+[0]PETSC ERROR: #7 DMLoad_Plex() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plex.c:2308
+[0]PETSC ERROR: #8 DMLoad() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/interface/dm.c:4138
+[0]PETSC ERROR: #9 DMPlexCreateFromFile() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plexcreate.c:5580
+[0]PETSC ERROR: #10 DMPlexCreateFromOptions_Internal() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plexcreate.c:3903
+[0]PETSC ERROR: #11 DMSetFromOptions_Plex() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plexcreate.c:4206
+[0]PETSC ERROR: #12 DMSetFromOptions() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/interface/dm.c:905
+[0]PETSC ERROR: #13 CreateDM() at /global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/src/rdysetup.c:193
+[0]PETSC ERROR: #14 RDySetup() at /global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/src/rdysetup.c:1039
+[0]PETSC ERROR: #15 main() at /global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/driver/main.c:116
+[0]PETSC ERROR: PETSc Option Table entries:
+[1]PETSC ERROR: #10 DMPlexCreateFromOptions_Internal() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plexcreate.c:3903
+[1]PETSC ERROR: #11 DMSetFromOptions_Plex() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/impls/plex/plexcreate.c:4206
+[1]PETSC ERROR: #12 DMSetFromOptions() at /global/cfs/cdirs/m4267/petsc/petsc_main/src/dm/interface/dm.c:905
+[1]PETSC ERROR: #13 CreateDM() at /global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/src/rdysetup.c:193
+[1]PETSC ERROR: #14 RDySetup() at /global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/src/rdysetup.c:1039
+[1]PETSC ERROR: #15 main() at /global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/driver/main.c:116
+[1]PETSC ERROR: PETSc Option Table entries:
+[1]PETSC ERROR: -ceed /gpu/cuda (source: command line)
+[1]PETSC ERROR: -dist_dm_distribute_save_sf true (source: code)
+[1]PETSC ERROR: -dm_plex_create_from_hdf5_xdmf (source: command line)
+[1]PETSC ERROR: -dm_plex_filename DamBreak_grid20480x10240.h5 (source: code)
+[1]PETSC ERROR: -dm_vec_type cuda (source: command line)
+[1]PETSC ERROR: -dm_view (source: command line)
+[1]PETSC ERROR: -log_view (source: command line)
+[0]PETSC ERROR: -ceed /gpu/cuda (source: command line)
+[0]PETSC ERROR: -dist_dm_distribute_save_sf true (source: code)
+[0]PETSC ERROR: -dm_plex_create_from_hdf5_xdmf (source: command line)
+[0]PETSC ERROR: -dm_plex_filename DamBreak_grid20480x10240.h5 (source: code)
+[0]PETSC ERROR: -dm_vec_type cuda (source: command line)
+[0]PETSC ERROR: -dm_view (source: command line)
+[0]PETSC ERROR: -log_view (source: command line)
+[0]PETSC ERROR: -log_view_gpu_time (source: command line)
+[0]PETSC ERROR: -ts_monitor (source: command line)
+[0]PETSC ERROR: -use_gpu_aware_mpi 0 (source: command line)
+[0]PETSC ERROR: ----------------End of Error Message -------send entire error message to petsc-maint@mcs.anl.gov----------
+[1]PETSC ERROR: -log_view_gpu_time (source: command line)
+[1]PETSC ERROR: -ts_monitor (source: command line)
+[1]PETSC ERROR: -use_gpu_aware_mpi 0 (source: command line)
+[1]PETSC ERROR: ----------------End of Error Message -------send entire error message to petsc-maint@mcs.anl.gov----------
+MPICH ERROR [Rank 0] [job id 18287516.0] [Fri Nov 17 07:44:04 2023] [nid008380] - Abort(76) (rank 0 in comm 16): application called MPI_Abort(MPI_COMM_SELF, 76) - process 0
+
+MPICH ERROR [Rank 1] [job id 18287516.0] [Fri Nov 17 07:44:04 2023] [nid008380] - Abort(76) (rank 0 in comm 16): application called MPI_Abort(MPI_COMM_SELF, 76) - process 0
+
+srun: error: nid008380: task 1: Exited with exit code 76
+srun: Terminating StepId=18287516.0
+slurmstepd: error: *** STEP 18287516.0 ON nid008380 CANCELLED AT 2023-11-17T15:44:05 ***
+srun: error: nid008380: task 0: Exited with exit code 76

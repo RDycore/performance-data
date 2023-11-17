@@ -1,0 +1,79 @@
+#!/bin/bash
+#SBATCH -A m4267_g
+#SBATCH -C gpu
+#SBATCH -q debug
+#SBATCH -t 0:30:00
+#SBATCH -N 2
+#SBATCH --ntasks-per-node=4
+#SBATCH -c 32
+#SBATCH --gpus-per-task=1
+
+#N=1;n=1;
+#N=1;n=2;
+#N=1;n=4;
+N=2;n=8
+#N=4;n=16
+#N=8;n=32
+#N=16;n=64
+#N=32;n=128
+
+G=$n
+
+GRID_ID=20480x10240
+
+DIR_NAME=n_${n}_${SLURM_JOB_ID}_`date "+%Y-%m-%d"`
+
+mkdir ${DIR_NAME}
+cp ${GRID_ID}.ceed_cuda.batch ${DIR_NAME}
+
+source ~/.petsc-rdycore-pm-gnugpu
+
+export PETSC_DIR=/global/cfs/projectdirs/m4267/petsc/petsc_b3128c15e0e
+export PETSC_ARCH=pm-gpu-no-debug-gcc-11-2-0
+export PETSC_DIR=/global/cfs/projectdirs/m4267/petsc/petsc_fix-plex-setup
+export PETSC_ARCH=pm-cpu-no-debug-gcc-11-2-0-df4e79081a8
+
+export PETSC_DIR=/global/cfs/projectdirs/m4267/petsc/petsc_main
+export PETSC_ARCH=pm-gpu-no-debug-gcc-11-2-0-a7898f52c39
+export PETSC_ARCH=pm-gpu-no-debug-gcc-11-2-0-16ce926e8e1
+
+export LD_LIBRARY_PATH=$PETSC_DIR/$PETSC_ARCH/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$CRAY_LD_LIBRARY_PATH:$LD_LIBRARY_PATH
+
+export MPICH_GPU_SUPPORT_ENABLED=1
+export GPU_AWARE_MPI=0
+export HDF5_USE_FILE_LOCKING=FALSE
+
+RDYCORE=/global/cfs/projectdirs/m4267/gbisht/rdycore/build-${PETSC_ARCH}/bin/rdycore
+RDYCORE=/global/cfs/projectdirs/m4267/gbisht/rdycore-ceed/build-${PETSC_ARCH}/bin/rdycore
+#RDYCORE=/global/cfs/projectdirs/m4267/gbisht/e3sm/externals/rdycore/build-${PETSC_ARCH}/bin/rdycore
+LOG_FILE=${GRID_ID}.n_${n}.${PETSC_ARCH}.ceed_cuda.${SLURM_JOB_ID}.gpu_aware_mpi_${GPU_AWARE_MPI}.log
+LOG_VIEW_FILE=${GRID_ID}.n_${n}.ceed_cuda.${SLURM_JOB_ID}.log_view
+YAML_FILE=inputdeck_${GRID_ID}.yaml
+
+env > env.${SLURM_JOB_ID}.txt
+
+#nsys profile -t nvtx,cuda \
+#nsys profile --trace=cuda,cudnn,cublas,osrt,nvtx,mpi --mpi-impl=mpich --nic-metrics=true --gpu-metrics-device=all \
+#-log_view :${LOG_VIEW_FILE}:ascii_csv          \
+
+srun                \
+-G${G}              \
+-N $N -n $n -c 32   \
+${RDYCORE}          \
+${YAML_FILE}        \
+-ceed /gpu/cuda     \
+-dm_vec_type cuda   \
+-ts_monitor         \
+-log_view           \
+-log_view_gpu_time  \
+-use_gpu_aware_mpi ${GPU_AWARE_MPI} \
+-dm_plex_create_from_hdf5_xdmf \
+-dm_view \
+2>&1 | tee ${LOG_FILE}
+
+#for file in `ls report*`; do mv $file ${DIR_NAME}.$file ; done
+
+mv *.${SLURM_JOB_ID}.* ${DIR_NAME}
+mv $LOG_FILE ${DIR_NAME}
+
